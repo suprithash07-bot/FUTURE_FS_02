@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    if (sessionStorage.getItem("adminLoggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Client Lead Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+    <h1>Client Lead Management System</h1>
+    <p>Mini CRM</p>
+    <button onclick="logout()">Logout</button>
+</header>
+    <main>
+
+        <!-- Add Lead Section -->
+        <section class="form-section">
+
+            <h2>Add New Lead</h2>
+
+            <form id="leadForm">
+
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter client name"
+                    required
+                >
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter client email"
+                    required
+                >
+
+                <label for="source">Source</label>
+                <input
+                    type="text"
+                    id="source"
+                    placeholder="Example: Website"
+                    required
+                >
+
+                <label for="status">Status</label>
+                <select id="status">
+                    <option value="New">New</option>
+                    <option value="Contacted">Contacted</option>
+                    <option value="Converted">Converted</option>
+                </select>
+
+                <label for="notes">Notes</label>
+                <textarea
+                    id="notes"
+                    placeholder="Enter notes or follow-up details"
+                ></textarea>
+<label for="followUp">Follow-up</label>
+<input type="text" id="followUp" placeholder="Enter follow-up details">
+                <button type="submit">Add Lead</button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Lead List Section -->
+        <section class="leads-section">
+
+            <h2>Lead List</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Source</th>
+                        <th>Status</th>
+                        <th>Notes</th>
+                        <th>Follow-up</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="leadList">
+                    <!-- Leads will appear here -->
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
