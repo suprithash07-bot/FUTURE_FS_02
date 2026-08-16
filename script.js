@@ -1,5 +1,4 @@
-const API_URL = "http://localhost:5000/api/leads";
-
+const API_URL = "https://future-fs-02-backend-pisn.onrender.com/api/leads";
 // Get leads from backend
 async function getLeads() {
     try {
